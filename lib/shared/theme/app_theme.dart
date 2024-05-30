@@ -44,7 +44,9 @@ class AppTheme {
     const textTheme = TextTheme();
 
     final bodyFont = GoogleFonts.ibmPlexSansTextTheme(textTheme);
-    final headingFont = GoogleFonts.syneMonoTextTheme(textTheme);
+    //syneMonoTextTheme(textTheme)
+    final headingFont = GoogleFonts.robotoTextTheme(textTheme);
+    //Roboto
 
     return bodyFont.copyWith(
       displayLarge: headingFont.displayLarge,

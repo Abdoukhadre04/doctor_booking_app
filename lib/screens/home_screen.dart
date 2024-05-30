@@ -99,7 +99,9 @@ class HomeView extends StatelessWidget {
           children: [
             _DoctorCategories(),
              SizedBox(height: 16.0,),
-            _MySchedule()
+            _MySchedule(),
+            SizedBox(height: 16.0,),
+            _NearbyDoctors()
           ],
         ),
       ),
@@ -124,6 +126,38 @@ class _MySchedule extends StatelessWidget {
     );
   }
 }
+
+
+class _NearbyDoctors extends StatelessWidget {
+  const _NearbyDoctors({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return Column(
+      children: [
+        SectionTitle(
+          title: 'Nearby Doctors',
+          action: 'See all',
+          onPressed: (){},
+        ),
+        const SizedBox(height: 8.0,),
+        ListView.separated(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          separatorBuilder: (context, index){
+            return Divider(height: 24.0, color: colorScheme.surfaceVariant,);
+          },
+          itemCount: Doctor.sampleDoctors.length,
+          itemBuilder: (context, index){
+
+          },
+        )
+      ],
+    );
+  }
+}
+
 
 
 

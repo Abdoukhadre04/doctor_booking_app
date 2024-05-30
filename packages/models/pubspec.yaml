@@ -11,6 +11,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  equatable: ^2.0.5  
+  google_maps_flutter: ^2.6.1
+  uuid: ^4.4.0
+  cloud_firestore: ^4.17.5
+  built_value: ^8.9.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

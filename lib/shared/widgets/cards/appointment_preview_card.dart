@@ -44,7 +44,20 @@ class AppointmentPreviewCard extends StatelessWidget {
           height: 8.0,
           margin: const EdgeInsets.symmetric(horizontal: 12),
           decoration: BoxDecoration(
-            color: colorScheme.primary.withOpacity(0.25)
+            color: colorScheme.primary.withOpacity(0.25),
+            borderRadius: const BorderRadius.vertical(
+              bottom: Radius.circular(8.0)
+            )
+          ),
+        ),
+        Container(
+          height: 8.0,
+          margin: const EdgeInsets.symmetric(horizontal: 24),
+          decoration: BoxDecoration(
+            color: colorScheme.primary.withOpacity(0.15),
+            borderRadius: const BorderRadius.vertical(
+              bottom: Radius.circular(8.0)
+            )
           ),
         )
       ],
