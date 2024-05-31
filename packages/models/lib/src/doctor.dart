@@ -47,13 +47,26 @@ class Doctor extends Equatable {
     reviewCount,
     patientCount
   ];
-
-  static final sampleDoctor = [
+  //https://media.istockphoto.com/id/1389245890/photo/portrait-of-young-asian-male-doctor-on-blue-background.jpg?s=2048x2048&w=is&k=20&c=M8tJ0cjO4WV8KiVkuHGalnwczEYM4Fxj7oeNqdfBR4U=
+  static final sampleDoctors = [
     Doctor(
       id: '1', 
       name: 'Dr. John DOE', 
       bio: 'Dr. John Doe is a cardiologist in New York', 
-      profileImageUrl: 'https://images.unplash.com/photo-1557683316-973673baf926', 
+      profileImageUrl: 'https://images.pexels.com/photos/3714743/pexels-photo-3714743.jpeg?auto=compress&cs=tinysrgb&w=600', 
+      category: DoctorCategory.cardiology, 
+      address: DoctorAddress.sampleAddresses[0], 
+      packages: DoctorPackage.samplePackages, 
+      workingHours: DoctorWorkingHours.sampleDoctorWorkingHours,
+      rating: 4.5,
+      reviewCount: 100,
+      patientCount: 1000,
+    ),
+    Doctor(
+      id: '2', 
+      name: 'Dr. John DOE', 
+      bio: 'Dr. John Doe is a cardiologist in New York', 
+      profileImageUrl: 'https://media.istockphoto.com/id/1389245890/photo/portrait-of-young-asian-male-doctor-on-blue-background.jpg?s=2048x2048&w=is&k=20&c=M8tJ0cjO4WV8KiVkuHGalnwczEYM4Fxj7oeNqdfBR4U=', 
       category: DoctorCategory.cardiology, 
       address: DoctorAddress.sampleAddresses[0], 
       packages: DoctorPackage.samplePackages, 
