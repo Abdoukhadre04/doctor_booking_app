@@ -17,8 +17,43 @@ class DoctorListTile extends StatelessWidget {
         radius: 30.0,
         backgroundColor: colorScheme.background,
         backgroundImage: NetworkImage(doctor.profileImageUrl),
-        
-      )
+
+      ),
+      title: Text(doctor.name, style: textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 4.0),
+          Text(
+            doctor.category.name,
+            style: textTheme.bodyMedium!.copyWith(color: colorScheme.secondary),
+          ),
+          const SizedBox(height: 8.0,),
+          Row(
+            children: [
+              Icon(Icons.stars, color: Colors.orange[200],size: 16,),
+              const SizedBox(width: 4.0,),
+              Text(
+                doctor.rating.toString(),
+                style: textTheme.bodySmall!.copyWith(
+                  color: colorScheme.onBackground.withOpacity(.5),
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+              const SizedBox(width: 16.0,),
+              Icon(Icons.work, color: colorScheme.tertiary,size: 16,),
+              const SizedBox(width: 4.0,),
+              Text(
+                '4 years',
+                style: textTheme.bodySmall!.copyWith(
+                  color: colorScheme.onBackground.withOpacity(.5),
+                  fontWeight: FontWeight.bold
+                )
+              )
+            ],
+          )
+        ]
+      ),
     );
   }
 }
