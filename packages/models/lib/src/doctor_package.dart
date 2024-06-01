@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:models/src/consultation_mode.dart';
 
 class DoctorPackage {

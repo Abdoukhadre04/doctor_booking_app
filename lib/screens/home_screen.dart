@@ -1,8 +1,8 @@
 import 'package:doctor_booking/shared/widgets/avatars/circle_avatar_with_text_label.dart';
 import 'package:doctor_booking/shared/widgets/cards/appointment_preview_card.dart';
 import 'package:doctor_booking/shared/widgets/list_tiles/doctor_list_tile.dart';
+import 'package:doctor_booking/shared/widgets/main_nav_bars/main_nav_bar.dart';
 import 'package:doctor_booking/shared/widgets/titles/section_title.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:models/models.dart';
 
@@ -106,12 +106,13 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const MainNavBar(),
     );
   }
 }
 
 class _MySchedule extends StatelessWidget {
-  const _MySchedule({super.key});
+  const _MySchedule();
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +131,7 @@ class _MySchedule extends StatelessWidget {
 
 
 class _NearbyDoctors extends StatelessWidget {
-  const _NearbyDoctors({super.key});
+  const _NearbyDoctors();
 
   @override
   Widget build(BuildContext context) {

@@ -31,7 +31,7 @@ class DoctorListTile extends StatelessWidget {
           const SizedBox(height: 8.0,),
           Row(
             children: [
-              Icon(Icons.stars, color: Colors.orange[200],size: 16,),
+              Icon(Icons.star, color: Colors.orange[200],size: 16,),
               const SizedBox(width: 4.0,),
               Text(
                 doctor.rating.toString(),
@@ -53,6 +53,12 @@ class DoctorListTile extends StatelessWidget {
             ],
           )
         ]
+      ),
+      trailing: FilledButton(
+        onPressed: (){},
+        child: const Text(
+          'Book Now',
+        )
       ),
     );
   }

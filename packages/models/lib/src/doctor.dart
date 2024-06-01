@@ -51,7 +51,7 @@ class Doctor extends Equatable {
   static final sampleDoctors = [
     Doctor(
       id: '1', 
-      name: 'Dr. John DOE', 
+      name: 'Dr. Oumou Kh. Diallo', 
       bio: 'Dr. John Doe is a cardiologist in New York', 
       profileImageUrl: 'https://images.pexels.com/photos/3714743/pexels-photo-3714743.jpeg?auto=compress&cs=tinysrgb&w=600', 
       category: DoctorCategory.cardiology, 
