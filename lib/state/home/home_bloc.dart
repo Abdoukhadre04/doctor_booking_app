@@ -20,13 +20,20 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(status: HomeStatus.loading));
 
     try {
-      final doctorCategories = await _doctorRepository.fetchDoctorCategories();
-      final nearbyDoctors = await _doctorRepository.fetchDoctor();
+      final categoriesFuture =  _doctorRepository.fetchDoctorCategories();
+      final doctorsFuture =  _doctorRepository.fetchDoctor();
+
+      final response = await Future.wait(
+        [categoriesFuture,doctorsFuture]
+      );
+
+      final categories = response[0] as List<DoctorCategory>;
+      final doctors = response[1] as List<Doctor>;
 
       emit(state.copyWith(
         status: HomeStatus.loaded,
-        doctorCategories: doctorCategories,
-        nearbyDoctors: nearbyDoctors,
+        doctorCategories: categories,
+        nearbyDoctors: doctors,
       ));
     } catch (e) {
       emit(state.copyWith(status: HomeStatus.error));

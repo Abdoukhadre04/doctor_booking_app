@@ -7,4 +7,6 @@ sealed class HomeEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadHomeEvent extends HomeEvent{}
+class LoadHomeEvent extends HomeEvent{
+  
+}
