@@ -149,7 +149,8 @@ class _MySchedule extends StatelessWidget {
               action: 'See all',
               onPressed: () {},
             ),
-            AppointmentPreviewCard(appointment: state.myAppointments.firstOrNull)
+            AppointmentPreviewCard(
+                appointment: state.myAppointments.firstOrNull)
           ],
         );
       },
@@ -163,32 +164,36 @@ class _NearbyDoctors extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    return Column(
-      children: [
-        SectionTitle(
-          title: 'Nearby Doctors',
-          action: 'See all',
-          onPressed: () {},
-        ),
-        const SizedBox(
-          height: 8.0,
-        ),
-        ListView.separated(
-          physics: const NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          separatorBuilder: (context, index) {
-            return Divider(
-              height: 24.0,
-              color: colorScheme.surfaceVariant,
-            );
-          },
-          itemCount: Doctor.sampleDoctors.length,
-          itemBuilder: (context, index) {
-            final doctor = Doctor.sampleDoctors[index];
-            return DoctorListTile(doctor: doctor);
-          },
-        )
-      ],
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            SectionTitle(
+              title: 'Nearby Doctors',
+              action: 'See all',
+              onPressed: () {},
+            ),
+            const SizedBox(
+              height: 8.0,
+            ),
+            ListView.separated(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              separatorBuilder: (context, index) {
+                return Divider(
+                  height: 24.0,
+                  color: colorScheme.surfaceVariant,
+                );
+              },
+              itemCount: state.nearbyDoctors.length,
+              itemBuilder: (context, index) {
+                final doctor = state.nearbyDoctors[index];
+                return DoctorListTile(doctor: doctor);
+              },
+            )
+          ],
+        );
+      },
     );
   }
 }
